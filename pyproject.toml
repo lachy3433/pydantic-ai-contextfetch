@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pydantic-ai-contextfetch"
+version = "0.1.0"
+description = "ContextFetch web search and page reading tools for Pydantic AI"
+authors = [{ name = "ContextFetch" }]
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Framework :: Pydantic",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "pydantic-ai-slim>=1.0.0",
+    "contextfetch>=0.1.0,<1.0.0",
+]
+
+[project.urls]
+Homepage = "https://contextfetch.dev"
+Documentation = "https://contextfetch.dev/docs/reference"
+Repository = "https://github.com/lachy3433/pydantic-ai-contextfetch"
+
+[dependency-groups]
+test = ["pytest>=8"]
+
+[tool.hatch.build.targets.sdist]
+only-include = ["pydantic_ai_contextfetch", "tests", "README.md", "LICENSE"]
